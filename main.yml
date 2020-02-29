@@ -1,0 +1,45 @@
+name: CI
+
+on: 
+  push:
+    branches:
+    - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: 拉取master完成
+      run: echo --开始--!
+    - name: 安装node
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - name: 依赖包安装
+    - run: |
+         npm install
+         ls
+    - name: 缓存
+    - uses: actions/cache@master
+      id: cache
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-   
+    - name: Install Dependencies # step3 name
+      if: steps.cache.outputs.cache-hit != 'true' # 如果变量 cache-hit 不等于 true
+      run: npm install # 安装 node modules 相关依赖
+    - name: Install SSH Client
+      uses: webfactory/ssh-agent@v0.2.0
+      with:
+         ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+
+    - name: Deploy 
+      id: deploy
+      uses: sma11black/hexo-action@v1.0.0
+      with:
+        deploy_key: ${{ secrets.DEPLOY_KEY }}
+        user_name: your github username
+        user_email: your github useremail
