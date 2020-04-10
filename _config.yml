@@ -66,6 +66,7 @@ default_category: uncategorized
 category_map:
   算法: algorthm
   校招: Campus-Recruitment-Guide
+  色彩: color
 tag_map:
 
 # Metadata elements
