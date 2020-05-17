@@ -69,3 +69,22 @@ auto 只能用来水平居中而不能垂直居中，因为在块格式化上下
 </div>
 
 在父级设置 dislay：flex，在子级的最后一个元素设置 margin-left：auto，这样剩余的空间会全部分配到 auto 上，从而实现靠右的布局。
+
+同理，我们也可以使用这样的特性实现 footer 的粘性布局
+
+# 总结：
+
+块格式化上下文中 margin-top 和 margin-bottom 的值如果是 auto，则他们的值都为 0
+
+flex 格式化上下文中，在通过 justify-content 和 align-self 进行对齐之前，任何正处于空闲的空间都会分配到该方向的自动 margin 中去
+
+单个方向上的自动 margin 也非常有用，它的计算值为该方向上的剩余空间
+
+使用了自动 margin 的 flex 子项目，它们父元素设置的 justify-content 以及它们本身的 align-self 将不再生效
+
+# 参考：
+
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content  
+https://www.cnblogs.com/coco1s/archive/2019/05/23/10910588.html  
+https://www.jianshu.com/p/da7438cd4f49  
+https://www.w3.org/TR/css-flexbox-1/
