@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"linghs.github.io","root":"/","scheme":"Muse","version":"7.7.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="这篇文章不在校招攻略系列中，因为昨天在掘金上看到了两篇宇宙条面经，将跟据现有的面经分析一波  两篇面经很巧，用着掘金的 chrome 插件一下子就看到了这两篇文章，前后相隔不过 4 篇文章 放的掘金的链接，但是他俩应该也在牛客上发了，没找到https:&#x2F;&#x2F;juejin.im&#x2F;post&#x2F;5e6a14b1f265da572978a1d3（实习）https:&#x2F;&#x2F;juejin.im&#x2F;post&#x2F;5e611">
+<meta property="og:type" content="article">
+<meta property="og:title" content="头条前端面经分析">
+<meta property="og:url" content="https://linghs.github.io/2020/03/13/2020%E5%B9%B4%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E9%9D%A2%E8%AF%95%E5%88%86%E6%9E%90%E4%B8%8E%E6%8E%A8%E6%B5%8B/index.html">
+<meta property="og:site_name" content="海森的博客">
+<meta property="og:description" content="这篇文章不在校招攻略系列中，因为昨天在掘金上看到了两篇宇宙条面经，将跟据现有的面经分析一波  两篇面经很巧，用着掘金的 chrome 插件一下子就看到了这两篇文章，前后相隔不过 4 篇文章 放的掘金的链接，但是他俩应该也在牛客上发了，没找到https:&#x2F;&#x2F;juejin.im&#x2F;post&#x2F;5e6a14b1f265da572978a1d3（实习）https:&#x2F;&#x2F;juejin.im&#x2F;post&#x2F;5e611">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-13T11:23:49.000Z">
+<meta property="article:modified_time" content="2020-07-19T13:43:46.980Z">
+<meta property="article:author" content="linghs">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://linghs.github.io/2020/03/13/2020%E5%B9%B4%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E9%9D%A2%E8%AF%95%E5%88%86%E6%9E%90%E4%B8%8E%E6%8E%A8%E6%B5%8B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true
+  };
+</script>
+
+  <title>头条前端面经分析 | 海森的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">海森的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">江畔何人初见月，江月何年初照人</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL2xpbmdocw==" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://linghs.github.io/2020/03/13/2020%E5%B9%B4%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E9%9D%A2%E8%AF%95%E5%88%86%E6%9E%90%E4%B8%8E%E6%8E%A8%E6%B5%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="linghs">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海森的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          头条前端面经分析
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-13 19:23:49" itemprop="dateCreated datePublished" datetime="2020-03-13T19:23:49+08:00">2020-03-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-19 21:43:46" itemprop="dateModified" datetime="2020-07-19T21:43:46+08:00">2020-07-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2020/" itemprop="url" rel="index"><span itemprop="name">2020</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>这篇文章不在校招攻略系列中，因为昨天在掘金上看到了两篇宇宙条面经，将跟据现有的面经分析一波</p>
+</blockquote>
+<h2 id="两篇面经"><a href="#两篇面经" class="headerlink" title="两篇面经"></a>两篇面经</h2><p>很巧，用着掘金的 chrome 插件一下子就看到了这两篇文章，前后相隔不过 4 篇文章</p>
+<p>放的掘金的链接，但是他俩应该也在牛客上发了，没找到<br><span class="exturl" data-url="aHR0cHM6Ly9qdWVqaW4uaW0vcG9zdC81ZTZhMTRiMWYyNjVkYTU3Mjk3OGExZDPvvIjlrp7kuaDvvIk=" title="https://juejin.im/post/5e6a14b1f265da572978a1d3（实习）">https://juejin.im/post/5e6a14b1f265da572978a1d3（实习）<i class="fa fa-external-link"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9qdWVqaW4uaW0vcG9zdC81ZTYxMTM2ZWU1MWQ0NTI3MTk2ZDYwMTnvvIjmoKHmi5vvvIk=" title="https://juejin.im/post/5e61136ee51d4527196d6019（校招）">https://juejin.im/post/5e61136ee51d4527196d6019（校招）<i class="fa fa-external-link"></i></span></p>
+<p>个人觉得这两篇面经<strong>非常具有代表性</strong><br>整体来说这两篇面经偏难，比以往要难，能够驾驭的肯定是 Top 级别的人。</p>
+<a id="more"></a>
+
+<h3 id="先说实习篇："><a href="#先说实习篇：" class="headerlink" title="先说实习篇："></a>先说实习篇：</h3><ul>
+<li>1 面，没有什么超纲的，常规计算机基础，js 基础，框架源码，算法实现</li>
+<li>2 面，项目，计算机网络，webpack，<strong>typescript</strong>，react 优化。</li>
+<li>3 面，node，算法</li>
+<li>4 面，算法，h5 存储</li>
+</ul>
+<p>这篇面经总体来说问的都是基础同时有一定深度， <strong>基础不等于简单</strong>，有多少人能把 var 和 let 的区别说完整呢，let 到底有没有变量提升。可以看到只有 2 面是问到了项目，估计是项目中没有亮点，或者问了没写进来，意外的是提到了 typescript，可能是项目中用到， 虽然问的很浅，但这证明，仅仅 js 基础掌握的好，已经不太够用了，而且一面问了 vue，二面又 react，说明单独掌握一个框架也是“不够优秀的”，注意 react 问的不是使用方法，而是优化，这又涉及到原理，毕竟只有知道他是怎么运行的才能针对性的优化，所以“知道”，“了解”还不行，要同时“掌握”两个框架。三面 的算法才叫算法，懂得自然懂，不解释。只有四面提到了一点点 css 相关，这感觉考察的不全面啊。</p>
+<p>这个人能力是很强的，强过大多数大三的同学，可怕的是：最后被刷了，说明有比他更优秀的人。你品，你细品。</p>
+<h3 id="校招篇："><a href="#校招篇：" class="headerlink" title="校招篇："></a>校招篇：</h3><ul>
+<li>1 面，vue/react，react hooks， 设计组件，模块化，webpack，jsonp，ajax</li>
+<li>2 面 前端安全，计算机网络，业务实现</li>
+</ul>
+<p>3，4 面没什么意思了，可以看到相比于实习，校招的面试偏重业务场景，而且知识的深度跟实习篇根本不是一个级别，但你如果说有什么特别难的知识点吗，其实也没有，连 react 的原理都没问，考察的正是将知识运用到业务中的能力。</p>
+<h2 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h2><p>这两篇我觉得好，是因为他体现出了实习和校招的区别。实习侧重知识的掌握，校招侧重知识的应用，所以大方向还是没有变的。</p>
+<h3 id="19-年前端行业发生了什么"><a href="#19-年前端行业发生了什么" class="headerlink" title="19 年前端行业发生了什么"></a>19 年前端行业发生了什么</h3><p>相比与之前两年，2019 还是有一些变化的</p>
+<ol>
+<li>react hooks api 正式推出</li>
+<li>WebAssembly 被列入 w3c 标准</li>
+<li>TypeScript 更加流行</li>
+<li>serverless 在大厂有了一些实践</li>
+<li>新的微前端架构</li>
+<li>flutter 目标统一天下（有生之年希望能看到）</li>
+<li>等等</li>
+</ol>
+<p>面试的内容肯定也是跟着行业的变化而变化<br>19 届这一年我记得几乎所有公司包括 bat 在内，必问原型链和闭包，而这两篇都没问，还有事件代理，回流重绘，这些这是不是说默认掌握了呢。vue 和 react 在 19 年一整年也在不断的变动，曾经懂原理是优秀，现在仅仅是及格线。曾经 vue，react 大谈生命周期，现在更多的是类 hook 的 api。曾经掌握一个框架是够用的，现在还要对另一个框架有所了解，最起码写过小项目吧，更关键的是要对两个框架的区别有自己的理解。曾经 js 基础更多问的是 es6 的方法怎么用 es5 去实现，现在 es5 似乎淡出视线，直接是 es6789 的天下。曾经更多问的是 promise 和降级实现，现在更多的是 async 和 await。<br>疑惑的是这两篇很少提及 css 相关，个人认为 css 及相关知识还是很重要的。</p>
+<p>所以看到对于基础的定义每年都在变化，我至今记得一个问题，是阿里面试官问的：“如果有一天所有浏览器都支持 class，那他还是不是语法糖？”。<br>我猜测今年的问题方向可能会更深更广，广度上来说业内技术动态，pc 端，移动端，（小程序端），后端（node 或 java）都要有所涉猎，深度上 设计模式，操作系统，尤其是 es6 的 proxy 以及 vue3 和 react hooks 的 api 都有着设计模式的支撑。还有 react 试图将浏览器的调度单独拆成一个包，这又离不开操作系统的知识，我觉得从今年开始，前端不再是那个入门简单的跨专业首选的方向了，要求的算法，数据结构，操作系统，计算机网络，甚至编译原理等知识丝毫不逊色与后端。<br>同时，由于业内对于 serverless 的不断探索实践，前端开发工程化不断完整，流程化不断规范，反而要求人对于业务的理解不断加深，所谓的业内最佳实践方案越来越不能满足各种定制化需求，对于不同的场景，更希望看到个性化的解决方案。</p>
+<p>也看了一些其他的面经，似乎也有这种倾向，最可怕的事情是自认大厂的公司把难度直接拉到同等水平，一些二线顺势填补等级空缺，小厂直接向大厂学习<br>希望这种情况不要出现。</p>
+<p>这一篇实习面经本来找不到了， 后来在牛客上发现了<br><span class="exturl" data-url="aHR0cHM6Ly93d3cubm93Y29kZXIuY29tL2Rpc2N1c3MvMzczNDI5P3R5cGU9MiZhbXA7b3JkZXI9MCZhbXA7cG9zPTEzJmFtcDtwYWdlPTHvvIjlrp7kuaDvvIk=" title="https://www.nowcoder.com/discuss/373429?type=2&amp;order=0&amp;pos=13&amp;page=1（实习）">https://www.nowcoder.com/discuss/373429?type=2&amp;order=0&amp;pos=13&amp;page=1（实习）<i class="fa fa-external-link"></i></span><br>这个是真的变态，感受一下</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>linghs
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://linghs.github.io/2020/03/13/2020%E5%B9%B4%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E9%9D%A2%E8%AF%95%E5%88%86%E6%9E%90%E4%B8%8E%E6%8E%A8%E6%B5%8B/" title="头条前端面经分析">https://linghs.github.io/2020/03/13/2020年前端实习面试分析与推测/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/08/%E6%A0%A1%E6%8B%9B%EF%BC%88%E4%B8%89%EF%BC%89/" rel="prev" title="校招（三）">
+      <i class="fa fa-chevron-left"></i> 校招（三）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/03/14/%E6%A0%A1%E6%8B%9B%EF%BC%88%E5%9B%9B%EF%BC%89/" rel="next" title="校招（四）">
+      校招（四） <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#两篇面经"><span class="nav-number">1.</span> <span class="nav-text">两篇面经</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#先说实习篇："><span class="nav-number">1.1.</span> <span class="nav-text">先说实习篇：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#校招篇："><span class="nav-number">1.2.</span> <span class="nav-text">校招篇：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结一下"><span class="nav-number">2.</span> <span class="nav-text">总结一下</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#19-年前端行业发生了什么"><span class="nav-number">2.1.</span> <span class="nav-text">19 年前端行业发生了什么</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">linghs</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license motion-element" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">linghs</span>
+</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> 强力驱动
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <span class="exturl theme-link" data-url="aHR0cHM6Ly9tdXNlLnRoZW1lLW5leHQub3Jn">NexT.Muse</span>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
